@@ -61,10 +61,14 @@ h1, h2, h3 {
     transform: scale(1);
     text-shadow: 0px 0px black, 0px 0px black;
 }
-.logo:hover .x {/*     transform: scale(.9); */text-shadow: -13px -38px #f23a9c, 5px -25px #f2e13a;}
+.logo:hover .x {
+    /*     transform: scale(.9); */
+    text-shadow: -13px -38px #f23a9c, 5px -25px #f2e13a;
+}
 .logo:hover {
     transform: scale(1.1) translate(-5px,-5px) rotate(-2deg);
     border-bottom: 1px solid transparent;
+    margin-bottom: 15px; /* to prevent page-jump */
 } 
 .logo:hover sub {
     transform: scale(1.1) rotate(-2deg) translate(0px, 5px);
@@ -90,19 +94,62 @@ h1, h2, h3 {
 } */
 #gradient{
     flex-grow: 1;
-    background: #eae9e9;
     position: absolute;
     width: 100%;
     height: 100%;
     z-index:-1;
 }
-.main-content {
-    width: 600px;
+.gradient {
+    background-color: #eae9e9;
+}
+header {
+    position: fixed;
+    width: 100%;
     max-width: 100%;
-    margin:0 auto;
+    top:0;
+    left:0;
+    z-index: 2;
+}
+header + div.container {
+    padding-top: 190px;
+}
+.site-content {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+.site-content article {
+    transition: .2s margin;
+}
+.site-content article:focus {
+    outline: none;
+    margin-left: -1em;
+    margin-right: 1em;
+    /* margin-top: 2em; */
+    /* margin-bottom: 2em; */
+    position: relative;
+}
+.site-content article:focus:after {
+    content: '';
+    border-color: transparent transparent transparent black;
+    border-width: 10px 0 10px 20px;
+    border-style: solid;
+    position: absolute;
+    transform: rotate(0deg) translate(2em, 0em)
+}
+
+.site-content article:after {
+    content: '';
+    position: absolute;
+    top:  2.5em;
+    left: -6.5em;
+    transition: .2s left, .2s transform;
+    transform: rotate(90deg)
+}
+.container {
+    width: 600px;
+    margin: 0 auto;
+    max-width: 100%;
     padding: 0 1em;
     box-sizing: border-box;
 }
@@ -121,11 +168,20 @@ h1, h2, h3 {
     text-transform: lowercase;
     left: -.3em;
     /* border-radius: 3px; */
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .nav a:hover {
     color: #08d8b5;
-    background-color: rgba(0,0,0,1);
-    transform: rotate(-7deg) translate(0, 2px);
+    background-color: transparent;
+    transform: rotate(-7deg) scale(1.1);
+    /* this is to prevent a hitbox jumping bug with the rotation -- create an invisible border which increases the hitbox, use box-shadow for background color */
+    border: 5px solid transparent;
+    box-shadow: 0 0 0 50px inset black; 
+    border-width: 5px 0;
+    /* fix page-jump on rotate with a removable margin */
+    margin-bottom: 0;
+    margin-top:0;
 }
 /* .nav a:before {
     content: '> ';
@@ -190,3 +246,14 @@ img.portrait:hover {
 ::selection {
     background: #f2e13a;
 }
+
+.logo #subscript-svg {
+    position: relative;
+    top: .5em;
+    stroke: #000;
+}
+.logo:hover #subscript-svg {
+    stroke: #08d8b5;
+}
+
+articles { opacity: 0;} /* this is bad, just temporary */

@@ -36,8 +36,12 @@ var colors = new Array(
   var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
   var color2 = "rgb("+r2+","+g2+","+b2+")";
   
-   document.getElementById('gradient').style.background = "-webkit-gradient(linear, left top, right bottom, from("+color1+"), to("+color2+"))"
-   document.getElementById('gradient').style.background = "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"
+
+  const gradientElements = document.getElementsByClassName('gradient')
+  for (let ele of gradientElements) {
+    ele.style.background = "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"
+    ele.style.background = "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"
+  }
     
     step += gradientSpeed;
     if ( step >= 1 )
