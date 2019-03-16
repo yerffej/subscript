@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ title }}</title>
-    <link rel="icon" href="">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/styles.css">
+    {{>head}}
 </head>
 <body>
-    <div class="main-content">
+    <div id="gradient"></div>
+    <div class="main-content" id="top">
         {{>header}}
-        <p>Hello World</p>
+        <h2>{{title}}</h2>
+        <article>
+            <p>Hello World</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet dui eu nisl auctor, placerat porta erat convallis. Duis ultrices tristique lorem ac lobortis. Nam interdum, sapien id vehicula blandit, nunc lectus auctor erat, at mattis arcu lorem ut turpis. Etiam semper dui in maximus convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse egestas, tortor non gravida feugiat, massa augue ultricies velit, nec scelerisque mauris orci quis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, dui a ornare condimentum, lacus massa pretium erat, a mattis enim dolor eu sem. Nam suscipit nisl id pulvinar gravida. Pellentesque euismod congue rhoncus. Morbi sit amet tortor a eros ullamcorper fringilla ac tincidunt dolor. Mauris malesuada ac turpis id efficitur.</p>
+            <p>Quisque accumsan nibh eu augue rutrum, sed placerat dui fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut laoreet dignissim malesuada. Cras rutrum diam eget tincidunt tristique. Praesent auctor quis ipsum sit amet aliquet. Cras consectetur tortor a nisl aliquet dapibus. Phasellus laoreet consectetur justo. Nam consectetur, justo interdum auctor sagittis, ex nisi scelerisque mi, quis scelerisque felis mauris et augue.</p>
+        </article>
+        {{>about}}
+        {{>work}}
+        {{>footer}}
     </div>
-    
-    {{>footer}}
-
     <script src="/js/scripts.js"></script>
+    <script src="/js/gradient-bg.js"></script>
 </body>
 </html>
