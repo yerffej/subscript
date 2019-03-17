@@ -1,6 +1,6 @@
 function anchorLinkHandler(e) {
     const headerSize = document.getElementById('header').clientHeight
-    const distanceToTop = el => Math.floor(el.getBoundingClientRect().top) - headerSize + window.scrollY;
+    const distanceToTop = el => Math.floor(el.getBoundingClientRect().top) - headerSize;
     
     e.preventDefault();
     e.target.blur()
@@ -10,7 +10,8 @@ function anchorLinkHandler(e) {
     const originalTop = distanceToTop(targetAnchor);
 
 
-    window.scrollTo({ top: originalTop, behavior: "smooth" });
+    window.scrollBy({ top: originalTop, left: 0, behavior: "smooth" });
+    // window.scrollTo({ top: originalTop, behavior: "smooth" });
     // targetAnchor.scrollIntoView({behavior:"smooth"});
     const checkIfDone = setInterval(function() {
         console.log('checkifdone run')
