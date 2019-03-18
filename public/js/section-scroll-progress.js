@@ -1,7 +1,7 @@
 
 // 
 
-let mainNavLinks = document.querySelectorAll(".nav a");
+let mainNavLinks = document.querySelectorAll(".nav a, .logo");
 let mainSections = document.querySelectorAll(".page-content");
 
 let lastId;

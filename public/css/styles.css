@@ -40,6 +40,31 @@ p {
     font-size: 18px;
     line-height: 1.6em;
 }
+li {
+    font-size: 17px;
+    line-height: 1.6em;
+    margin-bottom: .3em;
+}
+
+.project {
+    background:  rgba(255,255,255,.2);
+    padding: 2em;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 2em;
+}
+.project h4 {
+    font-size: 24px;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+.project img {
+    max-width: 100%;
+    border: 1px solid rgba(0,0,0,.1);
+    box-sizing: border-box;
+}
 /* p a:after {
     content: '';
 }
@@ -185,7 +210,10 @@ header + div.container {
     min-height: 100vh;
 }
 .site-content article {
-    margin-bottom: 3em;
+    margin-bottom: 1em;
+    border-bottom: 1px dashed rgba(0,0,0,.1);
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 .site-content article h1 {
     transition: .2s margin;
@@ -214,7 +242,7 @@ header + div.container {
 .logo #subscript-svg .path {
     animation: brief-highlight 4s;
 }
-.site-content article:focus h1 {
+.site-content article.current h1 {
     outline: none;
     margin-left: -.2em;
     margin-right: .2em;
@@ -241,7 +269,7 @@ header + div.container {
     transform: rotate(90deg);
     border-color: transparent transparent transparent black;
 }
-.site-content article:focus h1:after {
+.site-content article.current h1:after {
     content: '';
     border-color: transparent transparent transparent #08d8b5;
     border-width: 10px 0 10px 20px;
@@ -296,10 +324,15 @@ header .border {
 .nav a:last-of-type {
     padding-right: 0;
 }
+.nav a.current {
+    transform: translate(0, .2em);
+    font-weight: bold;
+    color: black;
+}
 .nav a:hover {
     color: #08d8b5;
     background-color: transparent;
-    transform: rotate(-7deg) scale(1);
+    transform: rotate(-7deg);
     /* this is to prevent a hitbox jumping bug with the rotation -- create an invisible border which increases the hitbox, use box-shadow for background color */
     border: 5px solid transparent;
     /* box-shadow: 0 0 0 50px inset black; */
@@ -307,6 +340,9 @@ header .border {
     /* fix page-jump on rotate with a removable margin */
     margin-bottom: 0;
     margin-top:0;
+}
+.nav a.current:hover {
+    transform: rotate(-7deg) translate(0, .2em);
 }
 /* .nav a:before {
     content: '> ';
@@ -359,6 +395,12 @@ colors:
 
 */
 
+.skills-list {
+    /* padding: 1em; */
+}
+.linkset {
+    margin-bottom: 2em;
+}
 .linkset li {
     display: inline-block;
 }
@@ -375,7 +417,7 @@ colors:
     background: #f23a9c;
 }
 .linkset ul {
-    margin: 0;
+    margin: 0 0;
     padding: 0;
 }
 
@@ -466,8 +508,3 @@ html {
     pointer-events: none;
     width:0;
 } */
-.nav a.current {
-    transform: translate(0, .2em);
-    font-weight: bold;
-    color: black;
-}
