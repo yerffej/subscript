@@ -7,10 +7,9 @@ function ready(fn) {
   }
 
 const fadeInElements = (...elements) => {
-    console.log('elements', elements)
     for (let eleType of elements) {
         for(let ele of eleType) fadeIn(ele)
-    }   
+    }
 }
 
 const svgPath = document.querySelectorAll('#subscript-svg .path');
@@ -19,6 +18,7 @@ const svgText = ready(() => {
 
         const articles = document.getElementsByTagName('article')
         const navs = document.getElementsByClassName('nav')
+        const border = document.getElementsByClassName('border')
         for(let article of articles) {
             article.style.opacity = 0
         }
@@ -34,7 +34,7 @@ const svgText = ready(() => {
             duration: 500,
             delay: (el, i) => { return i * 150 + 1000 },
             complete: () => {
-                fadeInElements(articles, navs)
+                fadeInElements(articles, navs, border)
             }
         })
 });
