@@ -19,7 +19,7 @@ function anchorLinkHandler(e) {
     // window.scrollTo({ top: targetLoc, behavior: "smooth" });
     // targetAnchor.scrollIntoView({behavior:"smooth"});
     const checkIfDone = setInterval(function() {
-        console.log('checkifdone run')
+        // console.log('checkifdone run')
         const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
         if (distanceToTop(targetAnchor) === 0 || atBottom) {
             targetAnchor.tabIndex = "-1";

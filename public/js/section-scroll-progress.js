@@ -3,7 +3,7 @@
 let mainNavLinks;
 
 const scrollProgressInit = () => {
-  mainNavLinks = document.querySelectorAll(".nav a");
+  mainNavLinks = document.querySelectorAll(".nav a, .logo");
   applyProgressClasses();
 }
 

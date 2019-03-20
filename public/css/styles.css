@@ -65,6 +65,9 @@ li {
     border: 1px solid rgba(0,0,0,.1);
     box-sizing: border-box;
 }
+.project .summary {
+    font-style: italic;
+}
 /* p a:after {
     content: '';
 }
@@ -404,6 +407,9 @@ colors:
 }
 .linkset {
     margin-bottom: 2em;
+    clear: both;
+    padding-top: 2em;
+    text-align: center;
 }
 .linkset li {
     display: inline-block;
