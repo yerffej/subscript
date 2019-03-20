@@ -4,6 +4,13 @@ let mainNavLinks;
 
 const scrollProgressInit = () => {
   mainNavLinks = document.querySelectorAll(".nav a, .logo");
+
+  // need to add a scroll buffer with lodash
+  window.addEventListener("scroll", event => {
+    applyProgressClasses()
+  });
+
+  // run once on load
   applyProgressClasses();
 }
 
@@ -29,10 +36,7 @@ const applyProgressClasses = () => {
   });
 }
 
-  // need to add a scroll buffer with lodash
-  window.addEventListener("scroll", event => {
-    applyProgressClasses()
-  });
+
 
 // run on load
 ready(scrollProgressInit);

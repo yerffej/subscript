@@ -1,11 +1,3 @@
-function ready(fn) {
-    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }
-
 const fadeInElements = (...elements) => {
     for (let eleType of elements) {
         for(let ele of eleType) fadeIn(ele)
