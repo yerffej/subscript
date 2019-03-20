@@ -500,13 +500,7 @@ footer p {
     text-align: right;
     font-size: 15px;
 }
-footer .name {
-    font-family: 'Reenie Beanie';
-    font-size: 24px;
-    display: inline-block;
-    margin-left: .2em;
-    color: #777;
-}
+
 html {
     scroll-behavior: smooth;
   }
@@ -552,6 +546,15 @@ html {
 }
 
 @media screen and (max-width:600px) {
+    h1, h2, h3 {
+        font-size: 2em;
+    }
+    .site-content article h1:after {
+        top: .45em;
+    }
+    .site-content article.current h1:after {
+        border-width: 7px 0 7px 15px;
+    }
     .logo {
         left: 0;
     }
@@ -585,7 +588,11 @@ html {
         position: static;
     }
     .details.collapsable {
-        border-top: 1px dotted rgba(0,0,0,.1);
-        padding-top: 2em;
+        border-left: none;
+        padding-left: 0;
+    }
+    .site-content article.current h1 {
+        margin-left: .8em;
+        margin-right: auto;
     }
 }
