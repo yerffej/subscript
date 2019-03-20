@@ -521,9 +521,7 @@ html {
 } */
 
 .collapser.collapsed .collapsable {
-    position: absolute;
-    left: -100%;
-    width: 0;
+    display: none;
 }
 .collapser .open {
     display: inline-block;
