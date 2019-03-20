@@ -24,7 +24,7 @@ h1, h2, h3 {
     font-size: 3em;
     margin: 0;
     font-weight: normal;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
 }
 
 p a {
@@ -47,7 +47,7 @@ li {
 }
 
 .project {
-    background:  rgba(255,255,255,.2);
+    background:  rgba(255,255,255,.3);
     padding: 2em;
     box-shadow: 1px 2px 3px rgba(0,0,0,.1);
     border: 1px solid rgba(0,0,0,.1);
@@ -214,6 +214,10 @@ header + div.container {
     border-bottom: 1px dashed rgba(0,0,0,.1);
     padding-bottom: 1em;
     padding-top: 1em;
+}
+.site-content article:last-of-type {
+    border-bottom: none;
+    margin-bottom: 30vh;
 }
 .site-content article h1 {
     transition: .2s margin;
@@ -427,23 +431,17 @@ img.portrait {
     border: 5px solid transparent;
     transition: all .2s;
     cursor: crosshair;
-    margin-left: 10px;
-    float: right;
-    margin-left: 2em;
+    margin-left: 5px;
+    float: left;
+    margin-right: 2em;
     margin-bottom:1em;
-    margin-top: 1em;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+    margin-top: 2em;
 }
 
 img.portrait:hover {
     border: 5px solid white;
     box-shadow: 5px 5px 0 #0cf4be, -5px -5px #f2e13a;
-    transform: scaleX(-1) scale(1.1);
+    transform: scale(1.1);
 }
 
 ::selection {
@@ -493,8 +491,15 @@ footer {
 }
 
 footer p {
-    font-family: 'Reenie Beanie';
     text-align: right;
+    font-size: 15px;
+}
+footer .name {
+    font-family: 'Reenie Beanie';
+    font-size: 24px;
+    display: inline-block;
+    margin-left: .2em;
+    color: #777;
 }
 html {
     scroll-behavior: smooth;
@@ -508,3 +513,36 @@ html {
     pointer-events: none;
     width:0;
 } */
+
+
+@media screen and (max-width:600px) {
+    .logo {
+        left: 0;
+    }
+    .nav {
+        display: block;
+        float: none;
+        clear: both;
+        text-align: center;
+        margin-top: 0;
+    }
+    .site-logo {
+        float: none;
+        text-align: center;
+    }
+    span#regular-script {
+        width: 226px;
+        margin: 0 auto;
+        display: block;
+    }
+    span#regular-script:before {
+        font-size: 130px;
+        top: -.7em;
+    }
+    .container {
+        padding: 0 2em;
+    }
+    div#header-fixed-placeholder {
+        height: 190px;
+    }
+}
