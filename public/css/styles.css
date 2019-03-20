@@ -549,6 +549,9 @@ html {
         padding: 0 2em;
     }
     div#header-fixed-placeholder {
-        height: 190px;
+        height: auto;
+    }
+    header {
+        position: static;
     }
 }
