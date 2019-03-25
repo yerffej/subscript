@@ -11,12 +11,12 @@ const svgText = ready(() => {
         const articles = document.getElementsByTagName('article')
         const navs = document.getElementsByClassName('nav')
         const border = document.getElementsByClassName('border')
-        for(let article of articles) {
-            article.style.opacity = 0
-        }
-        for(let nav of navs) {
-            nav.style.opacity = 0
-        }
+        // for(let article of articles) {
+        //     article.style.opacity = 0
+        // }
+        // for(let nav of navs) {
+        //     nav.style.opacity = 0
+        // }
         anime({
             targets: svgPath,
             // loop: true,
@@ -26,7 +26,7 @@ const svgText = ready(() => {
             duration: 500,
             delay: (el, i) => { return i * 150 + 1000 },
             complete: () => {
-                fadeInElements(articles, navs, border)
+                // fadeInElements(articles, navs, border)
             }
         })
 });

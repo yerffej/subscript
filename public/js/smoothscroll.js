@@ -1,10 +1,12 @@
 function anchorLinkHandler(e) {
     const headerSize = document.getElementById('header').clientHeight
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top) - headerSize;
-    
-    e.preventDefault();
+
+    if (this.getAttribute("href")) {
+        e.preventDefault();
+    }
     e.target.blur()
-    const targetID = this.getAttribute("href");
+    const targetID = this.getAttribute("href") || "#" + this.getAttribute('data-scroll-target');
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
@@ -30,6 +32,6 @@ function anchorLinkHandler(e) {
     }, 100);
 }
 
-const linksToAnchors = document.querySelectorAll('a[href^="#"]');
+const linksToAnchors = document.querySelectorAll('a[href^="#"], *[data-scroll-target]');
 
-linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
+linksToAnchors.forEach(each => (each.addEventListener("click", anchorLinkHandler, false)));
