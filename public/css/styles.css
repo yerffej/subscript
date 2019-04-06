@@ -20,6 +20,9 @@ body{
     /* font-family: 'Assistant', sans-serif; */
     position: relative;
 }
+body, header {
+    transition: .3s ease background, .3s ease box-shadow;
+}
 body.dark {
     color: #ccc;
     background: #444;
@@ -705,6 +708,7 @@ html {
     max-height: 2000px;
     transition: max-height .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
+
 
 @media screen and (max-width:600px) {
     h1, h2, h3 {
