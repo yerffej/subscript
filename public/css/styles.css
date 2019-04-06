@@ -333,9 +333,9 @@ header + div.container {
     border-color: transparent transparent transparent #f23a9c;
   }
   100% {
-    color: black;
-    stroke: black;
-    border-color: transparent transparent transparent black;
+    color: #333;
+    stroke: #333;
+    border-color: transparent transparent transparent #333;
   }
 }
 .logo #subscript-svg .path {
@@ -617,12 +617,15 @@ article.current img.portrait {
 .logo #subscript-svg {
     position: relative;
     top: .5em;
-    stroke: #000;
+    /* stroke: #000; */
+}
+.logo #subscript-svg.animation-complete {
+    stroke: #333;
 }
 .logo:hover #subscript-svg {
     stroke: #08d8b5;
 }
-.dark .logo #subscript-svg {
+.dark .logo #subscript-svg.animation-complete {
     stroke: #fff;
 }
 /* articles, header .border { opacity: 0;} this is bad, just temporary */
