@@ -27,13 +27,16 @@ body.dark {
     color: #ccc;
     background: #444;
 }
-h1, h2, h3 {
+h1, h2 {
     font-size: 3em;
     margin: 0;
     font-weight: normal;
     /* text-transform: lowercase; */
 }
-
+h3 {
+    font-size: 1.4em;
+    margin-bottom: .4em;
+}
 p a {
     color: #f23a9c;
     text-decoration: none;
@@ -208,7 +211,8 @@ p a:hover:after {
 .site-logo {
     float: left;
 }
-.site-logo .x {
+.site-logo .logo-flair {
+    opacity: 0;
     display: inline-block;
     transition: .2s all;
     transform: scale(1) rotate(-10deg);
@@ -217,20 +221,23 @@ p a:hover:after {
     top: .5em;
     left: -.55em;
 }
-.site-logo .x ~ .x {
+.site-logo .logo.animation-complete .logo-flair {
+    opacity: 1;
+}
+.site-logo .logo-flair ~ .logo-flair {
     right: -.55em;
     left: auto;
     z-index: -1;
     top: .4em;
     transform: rotate(-14deg);
 }
-.logo:hover .x {
+.logo:hover .logo-flair {
     transform: rotate(-18deg);
     text-shadow: -13px 18px #f23a9c, -30px 5px #f2e13a;
     left: -.8em;
     transition: .5s all;
 }
-.logo:hover .x ~ .x {
+.logo:hover .logo-flair ~ .logo-flair {
     transform: rotate(-18deg);
     text-shadow: 13px -18px #f23a9c, 30px -5px #f2e13a;
     left: auto;
@@ -338,7 +345,7 @@ header + div.container {
     border-color: transparent transparent transparent #333;
   }
 }
-.logo #subscript-svg .path {
+.logo.animation-begun #subscript-svg .path {
     animation: brief-highlight 4s;
 }
 .site-content article.current h1 {
@@ -617,15 +624,15 @@ article.current img.portrait {
 .logo #subscript-svg {
     position: relative;
     top: .5em;
-    /* stroke: #000; */
+    stroke: transparent; 
 }
-.logo #subscript-svg.animation-complete {
+.logo.animation-complete #subscript-svg {
     stroke: #333;
 }
 .logo:hover #subscript-svg {
     stroke: #08d8b5;
 }
-.dark .logo #subscript-svg.animation-complete {
+.dark .logo.animation-complete #subscript-svg {
     stroke: #fff;
 }
 /* articles, header .border { opacity: 0;} this is bad, just temporary */
@@ -714,8 +721,11 @@ html {
 
 
 @media screen and (max-width:600px) {
-    h1, h2, h3 {
+    h1, h2{
         font-size: 2em;
+    }
+    h3 {
+        font-size: 1.2em;
     }
     .site-content article h1:after {
         top: .45em;

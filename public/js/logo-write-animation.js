@@ -11,6 +11,7 @@ const svgText = ready(() => {
         const articles = document.getElementsByTagName('article')
         const navs = document.getElementsByClassName('nav')
         const border = document.getElementsByClassName('border')
+        const logo = document.getElementById('header-logo');
         anime({
             targets: svgPath,
             // loop: true,
@@ -19,11 +20,18 @@ const svgText = ready(() => {
             easing: 'easeInOutSine',
             duration: 500,
             delay: (el, i) => { return i * 150 + 1000 },
-            complete: () => {
-                let logo = document.getElementById('subscript-svg');
+            begin: () => {
                 if (logo.classList)
-                    logo.classList.add('animation-complete');
+                    logo.classList.add('animation-begun');
                 else
+                    logo.className += ' ' + 'animation-begun';
+                
+            },
+            complete: () => {
+                if (logo.classList){
+                    logo.classList.add('animation-complete');
+                    logo.classList.remove('animation-begun')
+                } else
                     logo.className += ' ' + 'animation-complete';
             }
         })
