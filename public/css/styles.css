@@ -572,6 +572,42 @@ body:not(.dark) .style-switch:hover .dark {
     padding-top: 2em;
     text-align: center;
 }
+
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(0, -6px);
+    }
+    50% {
+        transform: translate(0, -2px);
+    }
+    75% {
+        transform: translate(0, -9px);
+    }
+}
+
+
+.linkset li:nth-child(1) {
+    animation: bounce 8s ease-in-out infinite;
+    animation-delay: 0;
+}
+.linkset li:nth-child(2) {
+    animation: bounce 8s ease-in-out infinite;
+    animation-delay: .5s;
+}
+.linkset li:nth-child(3) {
+    animation: bounce 8s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.linkset li:nth-child(4) {
+    animation: bounce 8s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
 .linkset li {
     display: inline-block;
 }
